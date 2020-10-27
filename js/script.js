@@ -6,45 +6,44 @@ function move(direcao, px) {
     if (direcao == "UP") {
         if((window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ") == 0) {
             document.querySelector(".square").style.top = "400px";
-            break;
-        }
-
-        var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
-        atual = parseInt(atual, 10) - px;
-        document.querySelector(".square").style.top = atual.toString() + "px";
+        } else {
+            var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
+            atual = parseInt(atual, 10) - px;
+            document.querySelector(".square").style.top = atual.toString() + "px";
+        }  
     }
 
     if (direcao == "LEFT") {
         if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
             document.querySelector(".square").style.left = "800px";
             break;
+        } else {
+            var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
+            atual = parseInt(atual, 10) - px;
+            document.querySelector(".square").style.left = atual.toString() + "px";
         }
-        var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
-        atual = parseInt(atual, 10) - px;
-        document.querySelector(".square").style.left = atual.toString() + "px";
     }
 
     if (direcao == "DOWN") {
         if((window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ") == 400) {
             document.querySelector(".square").style.top = "0px";
-            break;
+        } else {
+            var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
+            atual = parseInt(atual, 10) + px;
+            document.querySelector(".square").style.top = atual.toString() + "px";
         }
-        var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
-        atual = parseInt(atual, 10) + px;
-        document.querySelector(".square").style.top = atual.toString() + "px";
     }
 
     if (direcao == "RIGHT") {
         if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 800) {
             document.querySelector(".square").style.left = "0";
-            break;
+        } else {
+            var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
+            atual = parseInt(atual, 10) + px;
+            document.querySelector(".square").style.left = atual.toString() + "px";
         }
-        var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
-        atual = parseInt(atual, 10) + px;
-        document.querySelector(".square").style.left = atual.toString() + "px";
     }
 }
-
 
 function verificador() {
     if (isStarted == false) {
@@ -91,9 +90,6 @@ function game(event) {
                 move("RIGHT", 20);
                 break;
         }
-        
-
-
     }
 }
 
