@@ -1,4 +1,3 @@
-
 console.log("Script funcionando!");
 
 var isStarted = false;
