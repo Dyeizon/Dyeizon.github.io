@@ -14,13 +14,19 @@ function move(direcao, px) {
     }
 
     if (direcao == "LEFT") {
-        if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
-            document.querySelector(".square").style.left = "800px";
-        } else {
-            var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
-            atual = parseInt(atual, 10) - px;
-            document.querySelector(".square").style.left = atual.toString() + "px";
+        while(true) {
+            if (game().event.keyCode == 100) {
+                break;
+            }
+            if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
+                document.querySelector(".square").style.left = "800px";
+            } else {
+                var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
+                atual = parseInt(atual, 10) - px;
+                document.querySelector(".square").style.left = atual.toString() + "px";
+            }
         }
+        
     }
 
     if (direcao == "DOWN") {
@@ -65,7 +71,7 @@ function game(event) {
                 move("UP", 20);
                 break; 
 
-            case 97 || 65: // a
+            case 97: // a
                 move("LEFT", 20);
                 break;
 
@@ -73,7 +79,7 @@ function game(event) {
                 move("LEFT", 20);
                 break;
 
-            case 115 || 83: // s
+            case 115: // s
                 move("DOWN", 20);
                 break;
 
@@ -81,7 +87,7 @@ function game(event) {
                 move("DOWN", 20);
                 break;
 
-            case 100 || 68: // d
+            case 100: // d
                 move("RIGHT", 20);
                 break;
 
