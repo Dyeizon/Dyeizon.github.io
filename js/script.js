@@ -17,7 +17,7 @@ function verificador() {
 }
 
 function game(event) {
-    if (verificador()) {
+    if (true) {
         switch(event.keyCode) {
             case 119:
                 break;
