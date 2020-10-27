@@ -14,14 +14,12 @@ function move(direcao, px) {
     }
 
     if (direcao == "LEFT") {
-        while(true) {
-            if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
-                document.querySelector(".square").style.left = "800px";
-            } else {
-                var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
-                atual = parseInt(atual, 10) - px;
-                document.querySelector(".square").style.left = atual.toString() + "px";
-            }
+        if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
+            document.querySelector(".square").style.left = "800px";
+        } else {
+            var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
+            atual = parseInt(atual, 10) - px;
+            document.querySelector(".square").style.left = atual.toString() + "px";
         }
         
     }
