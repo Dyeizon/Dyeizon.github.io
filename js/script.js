@@ -6,6 +6,7 @@ function move(direcao, px) {
     if (direcao == "UP") {
         if((window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ") == 0) {
             document.querySelector(".square").style.top = "400px";
+            break;
         }
 
         var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
@@ -16,6 +17,7 @@ function move(direcao, px) {
     if (direcao == "LEFT") {
         if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
             document.querySelector(".square").style.left = "800px";
+            break;
         }
         var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
         atual = parseInt(atual, 10) - px;
@@ -25,6 +27,7 @@ function move(direcao, px) {
     if (direcao == "DOWN") {
         if((window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ") == 400) {
             document.querySelector(".square").style.top = "0px";
+            break;
         }
         var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
         atual = parseInt(atual, 10) + px;
@@ -34,6 +37,7 @@ function move(direcao, px) {
     if (direcao == "RIGHT") {
         if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 800) {
             document.querySelector(".square").style.left = "0";
+            break;
         }
         var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
         atual = parseInt(atual, 10) + px;
