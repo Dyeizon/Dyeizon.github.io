@@ -39,5 +39,6 @@ function game(event) {
     } else {
         console.log("Algo de errado aconteceu!");
     }
-
 }
+
+console.log("Fim do script!")
