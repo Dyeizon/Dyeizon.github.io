@@ -1,4 +1,3 @@
-import {Player} from "./Player.js";
 
 console.log("Script funcionando!");
 
@@ -6,7 +5,6 @@ var isStarted = false;
 
 function verificador() {
     if (isStarted == false) {
-        var player = new Player();
         document.querySelector(".game").style.transition = "200ms";
         document.querySelector(".game").style.opacity = "1";
         document.querySelector(".telaInicial").style.display = "none";
