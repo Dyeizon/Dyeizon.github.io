@@ -1,9 +1,12 @@
+import {Player} from "./Player.js";
+
 console.log("Script funcionando!");
 
 var isStarted = false;
 
 function verificador() {
     if (isStarted == false) {
+        var player = new Player();
         document.querySelector(".game").style.transition = "200ms";
         document.querySelector(".game").style.opacity = "1";
         document.querySelector(".telaInicial").style.display = "none";
@@ -13,9 +16,10 @@ function verificador() {
 }
 
 function game(event) {
-    if (true) {
+    if (verificador()) {
         switch(event.keyCode) {
             case 119:
+                player.move("UP", 20);
                 break;
             case 97:
                 var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
