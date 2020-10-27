@@ -15,9 +15,6 @@ function move(direcao, px) {
 
     if (direcao == "LEFT") {
         while(true) {
-            if (game().event.keyCode == 100) {
-                break;
-            }
             if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
                 document.querySelector(".square").style.left = "800px";
             } else {
