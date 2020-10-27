@@ -42,23 +42,17 @@ function verificador() {
 function game(event) {
     if (true) {
         switch(event.keyCode) {
-            case 119:
+            case 119 || 87:
                 move("UP", 20);
                 break;
-            case 97:
-                var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
-                atual = parseInt(atual, 10) - 20;
-                document.querySelector(".square").style.left = atual.toString() + "px";
+            case 97 || 65:
+                move("LEFT", 20);
                 break;
-            case 115:
-                var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
-                atual = parseInt(atual, 10) + 20;
-                document.querySelector(".square").style.top = atual.toString() + "px";
+            case 115 || 83:
+                move("DOWN", 20);
                 break;
-            case 100:
-                var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
-                atual = parseInt(atual, 10) + 20;
-                document.querySelector(".square").style.left = atual.toString() + "px";
+            case 100 || 68:
+                move("RIGHT", 20);
                 break;
 
         }
