@@ -16,7 +16,6 @@ function move(direcao, px) {
     if (direcao == "LEFT") {
         if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
             document.querySelector(".square").style.left = "800px";
-            break;
         } else {
             var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
             atual = parseInt(atual, 10) - px;
