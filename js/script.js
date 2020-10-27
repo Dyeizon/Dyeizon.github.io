@@ -2,10 +2,6 @@ console.log("Script funcionando!");
 
 var isStarted = false;
 
-function teste() {
-    console.log("aaaa");
-}
-
 function verificador() {
     if (isStarted == false) {
         document.querySelector(".game").style.transition = "200ms";
