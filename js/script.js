@@ -4,24 +4,37 @@ var isStarted = false;
 
 function move(direcao, px) {
     if (direcao == "UP") {
+        if((window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ") == 0) {
+            document.querySelector(".square").style.top = "400px";
+        }
+
         var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
         atual = parseInt(atual, 10) - px;
         document.querySelector(".square").style.top = atual.toString() + "px";
     }
 
     if (direcao == "LEFT") {
+        if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 0) {
+            document.querySelector(".square").style.left = "800px";
+        }
         var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
         atual = parseInt(atual, 10) - px;
         document.querySelector(".square").style.left = atual.toString() + "px";
     }
 
     if (direcao == "DOWN") {
+        if((window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ") == 400) {
+            document.querySelector(".square").style.top = "0px";
+        }
         var atual = (window.getComputedStyle(document.querySelector(".square")).top).replace("px", "   ");
         atual = parseInt(atual, 10) + px;
         document.querySelector(".square").style.top = atual.toString() + "px";
     }
 
     if (direcao == "RIGHT") {
+        if((window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ") == 800) {
+            document.querySelector(".square").style.left = "0";
+        }
         var atual = (window.getComputedStyle(document.querySelector(".square")).left).replace("px", "   ");
         atual = parseInt(atual, 10) + px;
         document.querySelector(".square").style.left = atual.toString() + "px";
@@ -40,8 +53,8 @@ function verificador() {
 }
 
 function game(event) {
-    if (true) {
-        switch(event.keyCode) {
+    if (isStarted) {
+        switch(event.keyCode) { // MOVIMENTO
             case 119: // w
                 move("UP", 20);
                 break;
@@ -73,13 +86,10 @@ function game(event) {
             case 68: // D
                 move("RIGHT", 20);
                 break;
-
-
         }
+        
 
 
-    } else {
-        console.log("Algo de errado aconteceu!");
     }
 }
 
