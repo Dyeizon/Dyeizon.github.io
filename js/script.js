@@ -42,18 +42,38 @@ function verificador() {
 function game(event) {
     if (true) {
         switch(event.keyCode) {
-            case 119 || 87:
+            case 119: // w
                 move("UP", 20);
                 break;
-            case 97 || 65:
+
+            case 87: // W
+                move("UP", 20);
+                break; 
+
+            case 97 || 65: // a
                 move("LEFT", 20);
                 break;
-            case 115 || 83:
+
+            case 65: // A
+                move("LEFT", 20);
+                break;
+
+            case 115 || 83: // s
                 move("DOWN", 20);
                 break;
-            case 100 || 68:
+
+            case 83: // S
+                move("DOWN", 20);
+                break;
+
+            case 100 || 68: // d
                 move("RIGHT", 20);
                 break;
+
+            case 68: // D
+                move("RIGHT", 20);
+                break;
+
 
         }
 
